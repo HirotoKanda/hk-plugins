@@ -1,0 +1,17 @@
+{
+  "name": "thesis-reviewer",
+  "version": "0.1.0",
+  "description": "Structural reviewer for science/engineering theses (理工系卒業論文). /thesis-structure-review <path> reads a thesis (PDF, LaTeX, or Markdown) and grades how well its structure fits a standard 6-chapter template, with special focus on the logical parallelism that should run through Theory/Method/Result/Discussion (baseline→proposed, simple→general). Cites concrete chapter/section numbers and quotes, checks figure/table placement, and reports in the thesis's own language. Evaluates structure and logic only — never physical or mathematical correctness.",
+  "author": {
+    "name": "jai",
+    "email": "terraformars2621@gmail.com"
+  },
+  "keywords": [
+    "thesis",
+    "卒業論文",
+    "structure-review",
+    "academic-writing",
+    "logical-flow",
+    "peer-review"
+  ]
+}

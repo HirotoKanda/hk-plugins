@@ -1,0 +1,38 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "hk-plugins",
+  "description": "Umbrella marketplace hosting all of jai's Claude Code plugins — orchestra (TDD orchestration), reading-papers (research-paper reading), and thesis-reviewer (thesis structure review).",
+  "owner": {
+    "name": "jai",
+    "email": "terraformars2621@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "orchestra",
+      "description": "Multi-agent orchestration for structured TDD development. Bare /orchestra sets up the Claude Code + Codex environment (detects project commands, offers to install recommended plugins with consent, marks the project orchestra-enabled in CLAUDE.md); /orchestra <request> conducts a Plan -> Implement -> Review -> Commit cycle, delegating planning/review to Claude subagents and implementation to ChatGPT Codex via the `codex` CLI.",
+      "author": {
+        "name": "jai"
+      },
+      "category": "workflow",
+      "source": "./plugins/orchestra"
+    },
+    {
+      "name": "reading-papers",
+      "description": "Read, summarize, evaluate, or critique a research paper (PDF / DOI / arXiv / URL) with one unified four-stage method — Triage -> Comprehend -> Critique -> Integrate — fusing Keshav's three-pass method and Elliott/Beck/DeMarco's Four i's. Produces a structured summary + critique + integration, and loads a physics.md toolbox (units-limits-symmetries, statistical vs systematic uncertainty, 3-sigma/5-sigma significance, reduced-chi-squared/residuals, PRL/arXiv norms) for physics/experimental papers. Also runs literature surveys.",
+      "author": {
+        "name": "jai"
+      },
+      "category": "research",
+      "source": "./plugins/reading-papers"
+    },
+    {
+      "name": "thesis-reviewer",
+      "description": "Reviews the STRUCTURE and logical flow of a science/engineering bachelor's thesis (理工系卒業論文) against a standard 6-chapter template — funnel-shaped Introduction, the build-up of Theory, the parallelism of Theory/Method/Result/Discussion along one axis (baseline→proposed, simple→general), figure/table placement, and Acknowledgement/References. Reads PDF, LaTeX, or Markdown and reports in the thesis's own language. Evaluates structure only, never content correctness.",
+      "author": {
+        "name": "jai"
+      },
+      "category": "review",
+      "source": "./plugins/thesis-reviewer"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "reading-papers",
+  "version": "1.0.0",
+  "description": "Read, summarize, evaluate, or critique a research paper (PDF / DOI / arXiv / URL) with one unified four-stage method — Triage -> Comprehend -> Critique -> Integrate — fusing Keshav's three-pass method and Elliott/Beck/DeMarco's Four i's. Triage answers the five C's and decides depth; Comprehend uses active reading + figure scrutiny; Critique reconstructs/re-derives the work and challenges every assumption; Integrate connects it to what you know and how you'll track it. Default output is a structured summary + critique + integration. For physics/experimental papers it also loads a physics.md toolbox (units-limits-symmetries, statistical vs systematic uncertainty, 3-sigma/5-sigma significance and look-elsewhere, reduced-chi-squared/residuals and log plots, PRL-Letter/companion and arXiv/Supplemental norms, a six-question evaluation gauntlet). Also runs literature surveys.",
+  "author": {
+    "name": "jai",
+    "email": "terraformars2621@gmail.com"
+  },
+  "keywords": [
+    "paper-reading",
+    "literature-review",
+    "research",
+    "physics",
+    "arxiv",
+    "peer-review"
+  ]
+}
