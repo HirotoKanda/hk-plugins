@@ -50,6 +50,16 @@ You are implementing one phase of a larger plan. Stay strictly within this phase
 4. Run the full relevant test command and confirm green.
 5. Run any project formatter / linter the repo uses and fix issues.
 
+## Debugging protocol (when a test fails unexpectedly or won't go green)
+Apply systematic debugging — do NOT patch blindly. Iron law: no fix without a root cause first.
+1. **Root cause first.** Read the full error / stack trace; note the file, line, and message. Reproduce the failure consistently. Check what your own changes did (`git diff`). In multi-component flows, add temporary logging at each boundary to find WHERE it breaks before deciding WHY.
+2. **Compare to working code.** Find similar passing code in the repo and list every difference from the broken path — don't assume "that can't matter".
+3. **One hypothesis at a time.** State "I think X is the cause because Y", then make the smallest change that tests it — one variable, never bundled fixes. If it doesn't work, form a NEW hypothesis instead of stacking another fix on top.
+4. **Fix the cause, not the symptom**, then re-run the full test command to confirm green and that nothing else broke.
+5. **Escalate, don't thrash.** If a test is still red after ~3 distinct hypotheses, STOP — that usually means the phase spec or surrounding architecture is wrong, not the next patch. Emit `BLOCKED: <root cause as you understand it>` rather than forcing more fixes.
+
+Remove any temporary diagnostic logging you added before you finish.
+
 ## Constraints
 - Do NOT commit. Leave changes uncommitted in the working tree.
 - Do NOT move beyond this phase's scope. A reviewer agent runs next.
