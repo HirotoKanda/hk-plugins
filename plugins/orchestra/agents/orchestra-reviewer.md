@@ -27,7 +27,7 @@ You verify against the actual uncommitted state of the working tree.
    - Were the planned tests written? Inspect them — are they real tests of the requirement, or do they rubber-stamp the implementation? A test that can never fail is worse than no test.
    - Does the production code do only what was asked, or did codex stray out of scope? Out-of-scope changes are a NEEDS_REVISION.
 
-3. **Run the tests yourself.** Don't trust the implementer's report. Execute the test command and confirm exit 0. If the command isn't given, infer it from the repo (test runner config, `CLAUDE.md`, etc.).
+3. **Run the tests yourself.** Don't trust the implementer's report. Execute the test command passed in the invoking prompt and confirm exit 0. If no test command was passed, report that back to the conductor rather than inferring one — pre-flight detection should have supplied it.
 
 4. **Quality pass.** Check for:
    - Obvious bugs, off-by-one errors, unhandled None/null/nil

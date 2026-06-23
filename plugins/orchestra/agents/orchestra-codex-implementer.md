@@ -100,7 +100,7 @@ Run, in parallel via Bash:
 2. `git diff --stat` — get a compact picture of files touched.
 
 Then:
-3. Run the project's test command yourself (the one codex was supposed to run) and confirm it exits 0. If you can't determine the test command from the repo or the brief, fall back to whatever the project's `CLAUDE.md` / `AGENTS.md` / `package.json` / `pyproject.toml` / `Cargo.toml` indicates.
+3. Run the test command yourself — the exact one from the brief / `plans/orchestra-context.md` (pre-flight detected it). This is your independent check that codex didn't no-op or misreport. If no test command reached you, do **not** infer one — return `Need: test_command` to the conductor, per the invocation-contract rule above.
 
 If tests pass and there are real changes: report success.
 If tests fail OR no changes were made OR codex emitted `BLOCKED:`: report failure with codex's output.

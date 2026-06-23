@@ -1,6 +1,6 @@
 {
   "name": "orchestra",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Multi-agent orchestration for structured TDD development. Bare /orchestra sets up the Claude Code + Codex environment (auto-detects project commands, offers to install recommended plugins with consent, and writes an orchestra-enabled block into the project's CLAUDE.md so complex tasks route through the workflow automatically); /orchestra <request> conducts a Plan -> Implement -> Review -> Commit cycle, delegating planning/review to Claude subagents and implementation to ChatGPT Codex via the `codex` CLI. Requires the `codex` CLI and the `claude-code-setup` plugin.",
   "author": {
     "name": "jai",
