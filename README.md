@@ -16,6 +16,7 @@ This repo is itself the marketplace: `.claude-plugin/marketplace.json` lists eve
 /plugin install orchestra@hk-plugins
 /plugin install reading-papers@hk-plugins
 /plugin install thesis-reviewer@hk-plugins
+/plugin install fortls-lsp@hk-plugins
 ```
 
 Restart the session (or `/exit` and relaunch) so skills and agents load.
@@ -27,6 +28,7 @@ Restart the session (or `/exit` and relaunch) so skills and agents load.
 | **orchestra** | `/orchestra` — multi-agent, TDD development. A conductor delegates planning/review to Claude subagents and implementation to ChatGPT Codex through a Plan → Implement → Review → Commit cycle. | Requires the `codex` CLI and the `claude-code-setup` plugin. |
 | **reading-papers** | `/reading-papers` — read, summarize & critique a research paper with one unified four-stage method (Triage → Comprehend → Critique → Integrate). Loads a physics toolbox for physics/experimental papers. | — |
 | **thesis-reviewer** | `/thesis-structure-review <path>` — grades the structure & logical flow of a science/engineering thesis (理工系卒業論文) against a standard 6-chapter template. Reads PDF/LaTeX/Markdown. | Structure only, never content correctness. |
+| **fortls-lsp** | Wires the Fortran language server (`fortls`) into Claude's built-in LSP tool — go-to-definition, find-references, symbol search & diagnostics across free-form and fixed-form Fortran. | Requires `fortls` on PATH (`pip install fortls`). |
 
 ## Layout
 
@@ -36,7 +38,8 @@ hk-plugins/                              <- git repo = marketplace
 └── plugins/
     ├── orchestra/                        (skill + 3 agents)
     ├── reading-papers/                   (skill + physics.md)
-    └── thesis-reviewer/                  (skill)
+    ├── thesis-reviewer/                  (skill)
+    └── fortls-lsp/                        (LSP server registration — no skill)
 ```
 
 ## Updating a plugin
